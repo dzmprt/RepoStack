@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 30.4.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 226)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3, .st4, .st5 {
+        fill: none;
+      }
+
+      .st6 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st6, .st7 {
+        stroke: #031827;
+        stroke-width: 14px;
+      }
+
+      .st8 {
+        fill: #f7fffc;
+      }
+
+      .st8, .st1, .st9, .st10, .st2, .st3, .st11, .st12, .st13, .st5, .st14 {
+        isolation: isolate;
+      }
+
+      .st8, .st2 {
+        font-size: 48px;
+        letter-spacing: .02em;
+      }
+
+      .st8, .st2, .st3, .st11 {
+        font-family: Georgia-Bold, Georgia;
+        font-weight: 700;
+      }
+
+      .st1 {
+        opacity: .34;
+        stroke: #b2fff1;
+        stroke-width: 5px;
+      }
+
+      .st9 {
+        fill: #d2fff6;
+        opacity: .13;
+      }
+
+      .st7 {
+        fill: url(#linear-gradient);
+      }
+
+      .st2 {
+        stroke: #062f42;
+      }
+
+      .st2, .st3 {
+        stroke-width: 1.42px;
+      }
+
+      .st3 {
+        stroke: #145b35;
+      }
+
+      .st3, .st11 {
+        font-size: 27px;
+        letter-spacing: .04em;
+      }
+
+      .st11 {
+        fill: #effff3;
+      }
+
+      .st4 {
+        stroke: url(#linear-gradient2);
+        stroke-width: 9px;
+      }
+
+      .st12 {
+        opacity: .28;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-width: 8px;
+      }
+
+      .st13 {
+        opacity: .4;
+        stroke: #e7fff9;
+        stroke-width: 3px;
+      }
+
+      .st5 {
+        opacity: .72;
+        stroke: #edfff8;
+        stroke-width: 4px;
+      }
+
+      .st15 {
+        clip-path: url(#clippath);
+      }
+
+      .st14 {
+        fill: #fff;
+        opacity: .38;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-97.74" y1=".89" x2="-96.74" y2="1.69" gradientTransform="translate(36038 -146) scale(368 314)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#09271b"/>
+      <stop offset=".22" stop-color="#17633f"/>
+      <stop offset=".5" stop-color="#45ac6b"/>
+      <stop offset=".76" stop-color="#22784d"/>
+      <stop offset="1" stop-color="#061b11"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path class="st0" d="M72,132v238c0,42,82,76,184,76s184-34,184-76v-238H72Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient1" x1="-97.62" y1="2.23" x2="-96.87" y2="3.23" gradientTransform="translate(36038 -208) scale(368 124)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#effff4"/>
+      <stop offset=".22" stop-color="#a6e6ba"/>
+      <stop offset=".57" stop-color="#4da86d"/>
+      <stop offset="1" stop-color="#155d3b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="-97.68" y1="4.06" x2="-96.68" y2="4.06" gradientTransform="translate(29603 -185) scale(302 78)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a2819"/>
+      <stop offset=".2" stop-color="#8bdda1"/>
+      <stop offset=".48" stop-color="#f7fff9"/>
+      <stop offset=".75" stop-color="#59bd77"/>
+      <stop offset="1" stop-color="#061b10"/>
+    </linearGradient>
+  </defs>
+  <path class="st7" d="M72,132v238c0,42,82,76,184,76s184-34,184-76v-238H72Z"/>
+  <g class="st15">
+    <g>
+      <path class="st9" d="M91,150v243c0,28,22,50,50,50h18V150h-68Z"/>
+      <path class="st12" d="M145,151v244"/>
+      <path class="st13" d="M176,154v237"/>
+      <path class="st1" d="M72,232c0,38,82,70,184,70s184-32,184-70M72,315c0,38,82,70,184,70s184-32,184-70"/>
+      <image class="st10" width="63" height="318" transform="translate(224.8 134.62) scale(.98)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAE+CAYAAAA9NhbbAAAACXBIWXMAAAs6AAALOgFkf1cNAAAAZklEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCDAT9NAAEteIggAAAAAElFTkSuQmCC"/>
+    </g>
+  </g>
+  <ellipse class="st6" cx="256" cy="132" rx="184" ry="62"/>
+  <ellipse class="st4" cx="256" cy="132" rx="151" ry="39"/>
+  <ellipse class="st14" cx="204" cy="111" rx="82" ry="15" transform="translate(-13.46 29.47) rotate(-8)"/>
+  <path class="st5" d="M102,133c3,25.07,77,41.45,154,41.45s151-18.07,154-41.45"/>
+  <text class="st8" transform="translate(120.27 300)"><tspan x="0" y="0">RepoStack</tspan></text>
+  <text class="st2" transform="translate(120.27 300)"><tspan x="0" y="0">RepoStack</tspan></text>
+  <text class="st11" transform="translate(182.94 345)"><tspan x="0" y="0">MongoDB</tspan></text>
+  <text class="st3" transform="translate(182.94 345)"><tspan x="0" y="0">MongoDB</tspan></text>
+</svg>

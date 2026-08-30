@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/dzmprt/RepoStack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dzmprt/PureSpec</RepositoryUrl>
+    <Authors>Dzmitry Pratsko</Authors>
+    <Title>RepoStack</Title>
+    <Version>0.0.1-alpha</Version>
+    <PackageReleaseNotes>0.0.1-alpha</PackageReleaseNotes>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageTags>repostack;repository;</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\logo.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PureSpec" />
+  </ItemGroup>
+    <ItemGroup>
+    <PackageReference Include="RepoStack" />
+  </ItemGroup>
+</Project>

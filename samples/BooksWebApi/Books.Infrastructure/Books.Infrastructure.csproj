@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>14</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Books.Application\Books.Application.csproj" />
+      <ProjectReference Include="..\Books.Domain\Books.Domain.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <ExcludeFromCodeCoverage>true</ExcludeFromCodeCoverage>
+    </PropertyGroup>
+
+      <ItemGroup>
+    <ProjectReference Include="../../../src/RepoStack.EntityFrameworkCore/RepoStack.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+    </Project>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 30.4.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 226)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3, .st4 {
+        fill: none;
+      }
+
+      .st5 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st5, .st6 {
+        stroke: #031827;
+        stroke-width: 14px;
+      }
+
+      .st7 {
+        fill: #f7fffc;
+      }
+
+      .st7, .st1, .st8, .st2, .st9, .st10, .st11, .st4, .st12 {
+        isolation: isolate;
+      }
+
+      .st7, .st2 {
+        font-family: Georgia-Bold, Georgia;
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: .02em;
+      }
+
+      .st1 {
+        opacity: .34;
+        stroke: #b2fff1;
+        stroke-width: 5px;
+      }
+
+      .st8 {
+        fill: #d2fff6;
+        opacity: .13;
+      }
+
+      .st2 {
+        stroke: #1c3664;
+        stroke-width: 1.42px;
+      }
+
+      .st6 {
+        fill: url(#linear-gradient);
+      }
+
+      .st3 {
+        stroke: url(#linear-gradient2);
+        stroke-width: 9px;
+      }
+
+      .st10 {
+        opacity: .28;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-width: 8px;
+      }
+
+      .st11 {
+        opacity: .4;
+        stroke: #e7fff9;
+        stroke-width: 3px;
+      }
+
+      .st4 {
+        opacity: .72;
+        stroke: #edfff8;
+        stroke-width: 4px;
+      }
+
+      .st13 {
+        clip-path: url(#clippath);
+      }
+
+      .st12 {
+        fill: #fff;
+        opacity: .38;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-97.74" y1=".89" x2="-96.74" y2="1.69" gradientTransform="translate(36038 -146) scale(368 314)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061b2c"/>
+      <stop offset=".22" stop-color="#0b5062"/>
+      <stop offset=".5" stop-color="#1c9a99"/>
+      <stop offset=".76" stop-color="#0b6075"/>
+      <stop offset="1" stop-color="#031727"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path class="st0" d="M72,132v238c0,42,82,76,184,76s184-34,184-76v-238H72Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient1" x1="-97.62" y1="2.23" x2="-96.87" y2="3.23" gradientTransform="translate(36038 -208) scale(368 124)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e1fff6"/>
+      <stop offset=".22" stop-color="#79e3d2"/>
+      <stop offset=".57" stop-color="#238f99"/>
+      <stop offset="1" stop-color="#07384e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="-97.68" y1="4.06" x2="-96.68" y2="4.06" gradientTransform="translate(29603 -185) scale(302 78)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#062035"/>
+      <stop offset=".2" stop-color="#8aeee0"/>
+      <stop offset=".48" stop-color="#f1fff9"/>
+      <stop offset=".75" stop-color="#40c8bc"/>
+      <stop offset="1" stop-color="#031829"/>
+    </linearGradient>
+  </defs>
+  <path class="st6" d="M72,132v238c0,42,82,76,184,76s184-34,184-76v-238H72Z"/>
+  <g class="st13">
+    <g>
+      <path class="st8" d="M91,150v243c0,28,22,50,50,50h18V150h-68Z"/>
+      <path class="st10" d="M145,151v244"/>
+      <path class="st11" d="M176,154v237"/>
+      <path class="st1" d="M72,232c0,38,82,70,184,70s184-32,184-70M72,315c0,38,82,70,184,70s184-32,184-70"/>
+      <image class="st9" width="63" height="318" transform="translate(224.8 134.62) scale(.98)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAE+CAYAAAA9NhbbAAAACXBIWXMAAAs6AAALOgFkf1cNAAAAZklEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCDAT9NAAEteIggAAAAAElFTkSuQmCC"/>
+    </g>
+  </g>
+  <ellipse class="st5" cx="256" cy="132" rx="184" ry="62"/>
+  <ellipse class="st3" cx="256" cy="132" rx="151" ry="39"/>
+  <ellipse class="st12" cx="204" cy="111" rx="82" ry="15" transform="translate(-13.46 29.47) rotate(-8)"/>
+  <path class="st4" d="M102,133c3,25.07,77,41.45,154,41.45s151-18.07,154-41.45"/>
+  <text class="st7" transform="translate(120.27 310)"><tspan x="0" y="0">RepoStack</tspan></text>
+  <text class="st2" transform="translate(120.27 310)"><tspan x="0" y="0">RepoStack</tspan></text>
+</svg>
