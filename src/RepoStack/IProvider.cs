@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace RepoStack;
 
 /// <summary>
@@ -13,6 +15,18 @@ public interface IProvider<TEntity> where TEntity : class
     /// <param name="specQuery">The projected query.</param><param name="cancellationToken">The cancellation token.</param>
     /// <returns>All matching projected results.</returns>
     ValueTask<TResult[]> ToArrayAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Returns entities matching a filter, ordering, and paging parameters.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="orderings">The optional sort criteria.</param>
+    /// <param name="limit">The optional maximum number of results.</param>
+    /// <param name="offset">The optional number of results to skip.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>All matching entities.</returns>
+    ValueTask<TEntity[]> ToArrayAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken);
 
     /// <summary>
     /// Returns entities matching a query.
@@ -37,6 +51,26 @@ public interface IProvider<TEntity> where TEntity : class
     ValueTask<TResult?> FirstOrDefaultAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken);
 
     /// <summary>
+    /// Returns the first entity matching a filter, or the default value.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The first matching entity, or <see langword="null"/>.</returns>
+    ValueTask<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Returns the first entity matching a filter, ordering, and paging parameters, or the default value.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="orderings">The optional sort criteria.</param>
+    /// <param name="limit">The optional maximum number of results.</param>
+    /// <param name="offset">The optional number of results to skip.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The first matching entity, or <see langword="null"/>.</returns>
+    ValueTask<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Returns the first matching entity or the default value.
     /// </summary>
     /// <param name="specQuery">The query.</param><param name="cancellationToken">The cancellation token.</param>
@@ -57,6 +91,26 @@ public interface IProvider<TEntity> where TEntity : class
     /// <param name="specQuery">The projected query.</param><param name="cancellationToken">The cancellation token.</param>
     /// <returns>The only matching result, or <see langword="null"/>.</returns>
     ValueTask<TResult?> SingleOrDefaultAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Returns the only entity matching a filter, or the default value.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The only matching entity, or <see langword="null"/>.</returns>
+    ValueTask<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Returns the only entity matching a filter, ordering, and paging parameters, or the default value.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="orderings">The optional sort criteria.</param>
+    /// <param name="limit">The optional maximum number of results.</param>
+    /// <param name="offset">The optional number of results to skip.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The only matching entity, or <see langword="null"/>.</returns>
+    ValueTask<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken);
 
     /// <summary>
     /// Returns the only matching entity or the default value.
@@ -81,6 +135,14 @@ public interface IProvider<TEntity> where TEntity : class
     ValueTask<TResult> SingleAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken);
 
     /// <summary>
+    /// Returns the only entity matching a filter, or throws when the result count is not one.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The only matching entity.</returns>
+    ValueTask<TEntity> SingleAsync(Expression<Func<TEntity, bool>>? predicate, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Returns the only matching entity value.
     /// </summary>
     /// <param name="specQuery">The query.</param><param name="cancellationToken">The cancellation token.</param>
@@ -102,6 +164,14 @@ public interface IProvider<TEntity> where TEntity : class
     ValueTask<long> CountAsync(IQuery<TEntity> specQuery, CancellationToken cancellationToken);
 
     /// <summary>
+    /// Counts entities matching a filter.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The number of matching entities.</returns>
+    ValueTask<long> CountAsync(Expression<Func<TEntity, bool>>? predicate, CancellationToken cancellationToken);
+
+    /// <summary>
     /// Counts entities.
     /// </summary>
     /// <returns>The number of entities.</returns>
@@ -121,6 +191,14 @@ public interface IProvider<TEntity> where TEntity : class
     /// <param name="specQuery">The query.</param><param name="cancellationToken">The cancellation token.</param>
     /// <returns><see langword="true"/> when a result exists.</returns>
     ValueTask<bool> AnyAsync(IQuery<TEntity> specQuery, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Determines whether a filter has any matching entities.
+    /// </summary>
+    /// <param name="predicate">The optional filter expression.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns><see langword="true"/> when a matching entity exists.</returns>
+    ValueTask<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate, CancellationToken cancellationToken);
 
     /// <summary>
     /// Determines whether a projected query has any results.

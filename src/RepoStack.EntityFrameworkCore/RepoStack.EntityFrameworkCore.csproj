@@ -9,8 +9,8 @@
         <RepositoryUrl>https://github.com/dzmprt/PureSpec</RepositoryUrl>
         <Authors>Dzmitry Pratsko</Authors>
         <Title>RepoStack EntityFrameworkCore</Title>
-        <Version>0.0.1-alpha</Version>
-        <PackageReleaseNotes>0.0.1-alpha</PackageReleaseNotes>
+        <Version>0.0.1-alpha-1</Version>
+        <PackageReleaseNotes>Add expression-based provider overloads for filtering, ordering, and paging.</PackageReleaseNotes>
         <PackageIcon>logo-efcore.png</PackageIcon>
         <PackageTags>repostack;repository;entityframeworkcore;efcore;</PackageTags>
     </PropertyGroup>
@@ -24,7 +24,7 @@
     <ItemGroup>
         <None Include="..\..\assets\logo-efcore.png" Pack="true" PackagePath=""/>
     </ItemGroup>
-  <ItemGroup>
+      <ItemGroup>
     <PackageReference Include="RepoStack" />
   </ItemGroup>
 </Project>

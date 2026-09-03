@@ -91,6 +91,31 @@ public sealed class EfCoreTests
     }
 
     [Fact]
+    public async Task ProviderSupportsExpressionBasedOverloads()
+    {
+        var (connection, context) = CreateContext();
+        await using (connection)
+        await using (context)
+        {
+            var provider = new BaseProvider<Item>(context);
+            var orderings = new IQueryOrder<Item>[]
+            {
+                new QueryOrder<Item, int>(item => item.Score, descending: true)
+            };
+
+            Assert.Equal("two", (await provider.ToArrayAsync(
+                item => item.Score > 0, orderings, limit: 1, offset: 1, CancellationToken.None))[0].Name);
+            Assert.Equal("three", (await provider.FirstOrDefaultAsync(
+                item => item.Score > 2, [], null, null, CancellationToken.None))!.Name);
+            Assert.Equal("two", (await provider.SingleOrDefaultAsync(
+                item => item.Score == 2, [], null, null, CancellationToken.None))!.Name);
+            Assert.Equal("two", (await provider.SingleAsync(item => item.Score == 2, CancellationToken.None)).Name);
+            Assert.Equal(2, await provider.CountAsync(item => item.Score > 1, CancellationToken.None));
+            Assert.True(await provider.AnyAsync(item => item.Name == "three", CancellationToken.None));
+        }
+    }
+
+    [Fact]
     public async Task ProviderExecutesSingleOperationsAndCanTrackEntities()
     {
         var (connection, context) = CreateContext();

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
 namespace RepoStack.EntityFrameworkCore;
@@ -23,6 +24,9 @@ public class BaseProvider<TEntity> : IProvider<TEntity> where TEntity : class
         return await query.LongCountAsync(cancellationToken);
     }
 
+    public virtual ValueTask<long> CountAsync(Expression<Func<TEntity, bool>>? predicate,
+        CancellationToken cancellationToken) => CountAsync(new Query<TEntity>(predicate), cancellationToken);
+
     public virtual async ValueTask<long> CountAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken)
     {
         var query = CreateQueryByQueryWithProjection(specQuery);
@@ -47,6 +51,13 @@ public class BaseProvider<TEntity> : IProvider<TEntity> where TEntity : class
         return await query.FirstOrDefaultAsync(cancellationToken);
     }
 
+    public virtual ValueTask<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken) =>
+        FirstOrDefaultAsync(new Query<TEntity>(predicate, orderings, limit, offset), cancellationToken);
+
+    public virtual ValueTask<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        CancellationToken cancellationToken) => FirstOrDefaultAsync(new Query<TEntity>(predicate), cancellationToken);
+
     public virtual async ValueTask<TResult?> SingleOrDefaultAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken)
     {
         var query = CreateQueryByQueryWithProjection(specQuery);
@@ -58,6 +69,13 @@ public class BaseProvider<TEntity> : IProvider<TEntity> where TEntity : class
         var query = CreateQueryByQuery(specQuery);
         return await query.SingleOrDefaultAsync(cancellationToken);
     }
+
+    public virtual ValueTask<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken) =>
+        SingleOrDefaultAsync(new Query<TEntity>(predicate, orderings, limit, offset), cancellationToken);
+
+    public virtual ValueTask<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? predicate,
+        CancellationToken cancellationToken) => SingleOrDefaultAsync(new Query<TEntity>(predicate), cancellationToken);
 
     public virtual async ValueTask<TResult[]> ToArrayAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken)
     {
@@ -71,11 +89,18 @@ public class BaseProvider<TEntity> : IProvider<TEntity> where TEntity : class
         return await query.ToArrayAsync(cancellationToken);
     }
 
+    public virtual ValueTask<TEntity[]> ToArrayAsync(Expression<Func<TEntity, bool>>? predicate,
+        IQueryOrder<TEntity>[]? orderings, int? limit, int? offset, CancellationToken cancellationToken) =>
+        ToArrayAsync(new Query<TEntity>(predicate, orderings, limit, offset), cancellationToken);
+
     public virtual async ValueTask<bool> AnyAsync(IQuery<TEntity> specQuery, CancellationToken cancellationToken)
     {
         var query = CreateQueryByQuery(specQuery);
         return await query.AnyAsync(cancellationToken);
     }
+
+    public virtual ValueTask<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate,
+        CancellationToken cancellationToken) => AnyAsync(new Query<TEntity>(predicate), cancellationToken);
 
     public virtual async ValueTask<bool> AnyAsync<TResult>(IQuery<TEntity, TResult> specQuery, CancellationToken cancellationToken)
     {
@@ -132,6 +157,9 @@ public class BaseProvider<TEntity> : IProvider<TEntity> where TEntity : class
         var query = CreateQueryByQuery(specQuery);
         return await query.SingleAsync(cancellationToken);
     }
+
+    public virtual ValueTask<TEntity> SingleAsync(Expression<Func<TEntity, bool>>? predicate,
+        CancellationToken cancellationToken) => SingleAsync(new Query<TEntity>(predicate), cancellationToken);
 
     public virtual async ValueTask<TEntity> SingleAsync(CancellationToken cancellationToken)
     {

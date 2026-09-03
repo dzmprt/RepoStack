@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using PureSpec;
 
-namespace RepoStack.PureSpecExtension;
+namespace RepoStack;
 
 /// <summary>
 /// Provides query creation extensions for specifications.

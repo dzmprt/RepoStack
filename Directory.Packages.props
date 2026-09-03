@@ -15,6 +15,6 @@
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
     <PackageVersion Include="MitMediator" Version="10.0.0" />
     <PackageVersion Include="PureSpec" Version="0.0.1-alpha-7" />
-      <PackageVersion Include="RepoStack" Version="0.0.1-alpha" />
-</ItemGroup>
+    <PackageVersion Include="RepoStack" Version="0.0.1-alpha-1" />
+  </ItemGroup>
 </Project>

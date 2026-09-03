@@ -8,10 +8,11 @@
   <Folder Name="/src/">
     <Project Path="src/RepoStack.EntityFrameworkCore/RepoStack.EntityFrameworkCore.csproj" />
     <Project Path="src/RepoStack/RepoStack.csproj" />
-      <Project Path="src/RepoStack.PureSpecExtension/RepoStack.PureSpecExtension.csproj" />
-</Folder>
+    <Project Path="src/RepoStack.PureSpecExtension/RepoStack.PureSpecExtension.csproj" />
+  </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/RepoStack.EntityFrameworkCore.Tests/RepoStack.EntityFrameworkCore.Tests.csproj" />
+    <Project
+      Path="tests/RepoStack.EntityFrameworkCore.Tests/RepoStack.EntityFrameworkCore.Tests.csproj" />
     <Project Path="tests\RepoStack.Tests\RepoStack.Tests.csproj" />
     <Project Path="tests/RepoStack.PureSpecExtension.Tests/RepoStack.PureSpecExtension.Tests.csproj" />
   </Folder>

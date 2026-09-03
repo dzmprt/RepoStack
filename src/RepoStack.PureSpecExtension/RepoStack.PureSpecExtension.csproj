@@ -9,8 +9,8 @@
     <RepositoryUrl>https://github.com/dzmprt/PureSpec</RepositoryUrl>
     <Authors>Dzmitry Pratsko</Authors>
     <Title>RepoStack</Title>
-    <Version>0.0.1-alpha</Version>
-    <PackageReleaseNotes>0.0.1-alpha</PackageReleaseNotes>
+    <Version>0.0.1-alpha-1</Version>
+    <PackageReleaseNotes>Align package version with the expression-based provider API.</PackageReleaseNotes>
     <PackageIcon>logo.png</PackageIcon>
     <PackageTags>repostack;repository;</PackageTags>
   </PropertyGroup>
@@ -24,7 +24,7 @@
   <ItemGroup>
     <PackageReference Include="PureSpec" />
   </ItemGroup>
-    <ItemGroup>
-    <PackageReference Include="RepoStack" />
+  <ItemGroup>
+    <ProjectReference Include="..\RepoStack\RepoStack.csproj" />
   </ItemGroup>
 </Project>

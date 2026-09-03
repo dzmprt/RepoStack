@@ -27,6 +27,7 @@ RepoStack keeps application code independent from a concrete data-access impleme
 - Filtered, ordered, and paged queries with `Query<TEntity>`
 - Server-side projections with `Query<TEntity, TResult>`
 - `ToArrayAsync`, `FirstOrDefaultAsync`, `SingleOrDefaultAsync`, `SingleAsync`, `CountAsync`, and `AnyAsync`
+- Expression-based provider overloads without constructing `Query<TEntity>`
 - Single-item and batch add, update, and delete operations
 - Optional automatic transaction start for repository mutations
 - Cancellation support on asynchronous database operations
@@ -38,19 +39,19 @@ RepoStack keeps application code independent from a concrete data-access impleme
 Install the core abstractions package:
 
 ```bash
-dotnet add package RepoStack --version 0.0.1-alpha
+dotnet add package RepoStack --version 0.0.1-alpha-1
 ```
 
 Install the Entity Framework Core integration when using EF Core:
 
 ```bash
-dotnet add package RepoStack.EntityFrameworkCore --version 0.0.1-alpha
+dotnet add package RepoStack.EntityFrameworkCore --version 0.0.1-alpha-1
 ```
 
 Install the PureSpec integration when the application uses [PureSpec](https://github.com/dzmprt/PureSpec) specifications:
 
 ```bash
-dotnet add package RepoStack.PureSpecExtension --version 0.0.1-alpha
+dotnet add package RepoStack.PureSpecExtension --version 0.0.1-alpha-1
 ```
 
 ## Queries and projections
@@ -72,6 +73,26 @@ BookListItem[] page = await books.ToArrayAsync(query, cancellationToken);
 ```
 
 Use `descending: true` for descending order. Multiple `QueryOrder` instances become a primary ordering followed by `ThenBy` / `ThenByDescending` orderings.
+
+For common entity queries, `IProvider<TEntity>` also provides overloads that accept the predicate, an array of orderings, `limit`, and `offset` directly. This avoids creating a `Query<TEntity>`:
+
+```csharp
+Book[] page = await books.ToArrayAsync(
+	book => book.Genre == Genre.Fiction,
+	[new QueryOrder<Book, string>(book => book.Title)],
+	limit: 20,
+	offset: 0,
+	cancellationToken);
+```
+
+`FirstOrDefaultAsync` and `SingleOrDefaultAsync` accept the same parameters and also have expression-only overloads. `SingleAsync`, `CountAsync`, and `AnyAsync` provide expression-only overloads as well:
+
+```csharp
+Book? book = await books.SingleOrDefaultAsync(
+	book => book.Isbn == isbn, [], null, null, cancellationToken);
+long count = await books.CountAsync(book => book.IsAvailable, cancellationToken);
+bool exists = await books.AnyAsync(book => book.Isbn == isbn, cancellationToken);
+```
 
 ## Write operations
 

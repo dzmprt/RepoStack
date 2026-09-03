@@ -9,8 +9,8 @@
         <RepositoryUrl>https://github.com/dzmprt/PureSpec</RepositoryUrl>
         <Authors>Dzmitry Pratsko</Authors>
         <Title>RepoStack</Title>
-        <Version>0.0.1-alpha</Version>
-        <PackageReleaseNotes>0.0.1-alpha</PackageReleaseNotes>
+        <Version>0.0.1-alpha-1</Version>
+        <PackageReleaseNotes>Add expression-based IProvider overloads for common entity queries.</PackageReleaseNotes>
         <PackageIcon>logo.png</PackageIcon>
         <PackageTags>repostack;repository;</PackageTags>
     </PropertyGroup>
